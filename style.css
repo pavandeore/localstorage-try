@@ -1,0 +1,26 @@
+.container{
+    margin: 0 auto;
+    width: 60%;
+    padding: 50px;
+  }
+  input{
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+  }
+  button{
+    padding: 10px;
+    font-size:17px;
+    margin: 0 auto;
+    margin-left: 10px;
+  }
+  ul li{
+    list-style: none;
+    font-size: 30px;
+    color: #252524;
+    font-weight: 600;
+    text-shadow: 6px 9px 3px #252525;
+  }
+  h2{
+    text-align: center;
+  }

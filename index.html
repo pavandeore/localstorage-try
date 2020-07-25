@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <input type="text" id="name" placeholder="Enter Name" />
+  <input type="text" id="age" placeholder="Enter Age" />
+  <input type="text" id="comment" placeholder="Enter Comments" />
+  <br/><button id="btn1">Store My Data <kbd>||</kbd> Get My Stored Data</button>
+  <div>
+    <h2>Stored Data</h2>
+    <ul id="list">
+    </ul>
+  </div>
+</div>
+  
+  <h2>If You Stored Your data once then refresh This page and click on get my stored Data </h2>
+
+  <script>
+      let btn = document.querySelector("#btn1");
+
+btn.addEventListener("click",function(){
+
+  let list = document.querySelector("#list");
+  let li = document.createElement("li");
+  let local = window.localStorage;
+
+  local.setItem("name",document.querySelector("#name").value);
+  local.setItem("age",document.querySelector("#age").value);
+  local.setItem("comment",document.querySelector("#comment").value);
+  
+  let gotname = local.getItem("name");
+  let gotage =local.getItem("age");
+  let gotcomment = local.getItem("comment");
+  
+  li.innerHTML = `${gotname} : ${gotage} : ${gotcomment}`;
+  list.appendChild(li);
+  
+})
+
+    </script>
+</body>
+</html>
