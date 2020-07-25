@@ -11,7 +11,8 @@
   <input type="text" id="name" placeholder="Enter Name" />
   <input type="text" id="age" placeholder="Enter Age" />
   <input type="text" id="comment" placeholder="Enter Comments" />
-  <br/><button id="btn1">Store My Data <kbd>||</kbd> Get My Stored Data</button>
+  <br/><button id="btn1">Store My Data </button>
+  <button id="btn2">Get My Stored Data</button>
   <div>
     <h2>Stored Data</h2>
     <ul id="list">
@@ -23,6 +24,7 @@
 
   <script>
       let btn = document.querySelector("#btn1");
+      let btn2 = document.querySelector("#btn2");
 
 btn.addEventListener("click",function(){
 
@@ -34,15 +36,16 @@ btn.addEventListener("click",function(){
   local.setItem("age",document.querySelector("#age").value);
   local.setItem("comment",document.querySelector("#comment").value);
   
+})
+
+btn2.addEventListener("click",function(){
   let gotname = local.getItem("name");
   let gotage =local.getItem("age");
   let gotcomment = local.getItem("comment");
   
   li.innerHTML = `${gotname} : ${gotage} : ${gotcomment}`;
   list.appendChild(li);
-  
-})
-
+}
     </script>
 </body>
 </html>
